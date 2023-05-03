@@ -13,12 +13,6 @@ for package in "${REQUIRED_PACKAGES[@]}"; do
       echo "${package} is already installed"
    fi
 done
-# Define the VNC server display number:
-VNC_DISPLAY=1
-
-# Define the VNC server port:
-VNC_PORT=5901
-
 # Define the VNC server auth directory:
 VNC_AUTH_DIR="/root/.vnc"
 
@@ -38,3 +32,6 @@ expect << EOF
         expect eof
 EOF
     chmod 600 "${VNC_AUTH_DIR}/${VNC_AUTH_FILE}"
+sleep 3
+clear 
+echo "Installation completed"
